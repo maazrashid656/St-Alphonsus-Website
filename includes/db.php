@@ -1,0 +1,15 @@
+<?php
+// Database connection file - db.php
+
+$host = 'localhost'; 
+$dbname = 'st_alphonsus'; // Database name
+$username = 'root'; 
+$password = ''; 
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+?>
