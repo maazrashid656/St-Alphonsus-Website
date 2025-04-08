@@ -43,6 +43,7 @@ $teacher = $stmt->fetch(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Edit Teacher</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <h2>Edit Teacher</h2>
