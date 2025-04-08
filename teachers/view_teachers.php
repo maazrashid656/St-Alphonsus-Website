@@ -11,6 +11,7 @@ $teachers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>View Teachers</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <h2>Teacher List</h2>
