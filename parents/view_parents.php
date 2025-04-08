@@ -10,6 +10,7 @@ $parents = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Parents</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <h2>Parents List</h2>
