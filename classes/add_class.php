@@ -28,6 +28,7 @@ $teachers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Add Class</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <h2>Add New Class</h2>
