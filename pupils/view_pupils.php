@@ -1,7 +1,7 @@
 <?php
 require '../includes/db.php'; // Include database connection
 
-$query = "SELECT p.PupilID, p.FirstName, p.LastName, p.DOB, p.Address, p.MedicalInfo, p.ClassID, p.ParentID
+$query = "SELECT p.PupilID, p.FirstName, p.LastName, p.DOB, p.Address, p.MedicalInfo, p.ClassID
           FROM Pupils p";
 $stmt = $conn->prepare($query);
 $stmt->execute();
@@ -11,6 +11,7 @@ $pupils = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>View Pupils</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <h2>Pupil List</h2>
@@ -23,7 +24,6 @@ $pupils = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <th>Address</th>
             <th>Medical Info</th>
             <th>Class</th>
-            <th>ParentID</th>
             <th>Actions</th>
             
         </tr>
@@ -35,7 +35,6 @@ $pupils = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td><?= $pupil['Address'] ?></td>
                 <td><?= $pupil['MedicalInfo'] ?></td>
                 <td><?= $pupil['ClassID'] ?></td>
-                <td><?= $pupil['ParentID'] ?></td>
                 <td>
                     <a href="edit_pupil.php?id=<?= $pupil['PupilID'] ?>">Edit</a> | 
                     <a href="delete_pupil.php?id=<?= $pupil['PupilID'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
