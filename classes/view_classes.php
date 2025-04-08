@@ -15,6 +15,7 @@ $classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>View Classes</title>
+  <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <h2>Class List</h2>
