@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>Add Parent</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <h2>Add New Parent</h2>
