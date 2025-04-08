@@ -10,10 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     // Ensure ClassID and ParentID are integers or NULL
     $classID = isset($_POST['ClassID']) && is_numeric($_POST['ClassID']) ? (int) $_POST['ClassID'] : NULL;
-    $parentID = isset($_POST['ParentID']) && is_numeric($_POST['ParentID']) ? (int) $_POST['ParentID'] : NULL;
+    
 
-    $query = "INSERT INTO Pupils (FirstName, LastName, DOB, Address, MedicalInfo, ClassID, ParentID) 
-              VALUES (:firstName, :lastName, :dob, :address, :medicalInfo, :classID, :parentID)";
+    $query = "INSERT INTO Pupils (FirstName, LastName, DOB, Address, MedicalInfo, ClassID) 
+              VALUES (:firstName, :lastName, :dob, :address, :medicalInfo, :classID)";
     
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':firstName', $firstName);
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':address', $address);
     $stmt->bindParam(':medicalInfo', $medicalInfo);
     $stmt->bindParam(':classID', $classID, PDO::PARAM_INT);
-    $stmt->bindParam(':parentID', $parentID, PDO::PARAM_INT);
+    
     
     $stmt->execute();
 
@@ -40,6 +40,7 @@ $classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Add Pupil</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <h2>Add New Pupil</h2>
@@ -69,8 +70,6 @@ $classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </select><br>
 
-        <label for="ParentID">Parent ID:</label>
-        <input type="text" name="ParentID" required><br>
 
         <button type="submit">Add Pupil</button>
     </form>
