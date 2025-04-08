@@ -37,6 +37,7 @@ $teachers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Edit Class</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <h2>Edit Class</h2>
